@@ -2,9 +2,14 @@ package br.com.jawebsites.vendasMongo.domain;
 
 import java.io.Serializable;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class Cliente implements Serializable  {
 	private static final long serialVersionUID = 1L;
-
+	
+	@Id
 	private String id; 
 	private String nome;
 	private String cpf;
@@ -15,7 +20,7 @@ public class Cliente implements Serializable  {
 		
 	}
 
-	public Cliente(String id, String nome, String cpf, String usuario, String status) {
+	public Cliente(String id, String nome, String cpf, String usuario, String status ) {
 		super();
 		this.id = id;
 		this.nome = nome;
