@@ -43,4 +43,9 @@ public class ClienteResurce {
  		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(cliente.getId()).toUri();
 		return ResponseEntity.created(uri).build();		
  	}
+ 	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)
+	public ResponseEntity<Void> delete(@PathVariable String id) {		
+		servico.delete(id);
+		return ResponseEntity.noContent().build(); 
+	}
 }

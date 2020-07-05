@@ -27,6 +27,13 @@ public class ClienteService {
 	public Cliente insert(Cliente cliente) {
 		return clienteRepository.insert(cliente);
 	}
+	
+	public void delete(String id) {
+		findById(id);
+		clienteRepository.deleteById(id);
+		
+	}
+	
 	public Cliente fromDto(ClienteDto clienteDto) {
 		return new Cliente(clienteDto.getId(),clienteDto.getNome(),clienteDto.getUsuario(), null, null);
 		
