@@ -13,7 +13,7 @@ public class Cliente implements Serializable  {
 	private String id; 
 	private String nome;
 	private String cpf;
-	private String usuario;
+	private String usuario; 
 	private String status;
 	
 	public Cliente () {
