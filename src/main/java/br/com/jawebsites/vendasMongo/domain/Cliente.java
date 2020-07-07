@@ -12,15 +12,16 @@ public class Cliente implements Serializable  {
 	@Id
 	private String id; 
 	private String nome;
+	private String usuario;
 	private String cpf;
-	private String usuario; 
+	 
 	private String status;
 	
 	public Cliente () {
 		
 	}
 
-	public Cliente(String id, String nome, String cpf, String usuario, String status ) {
+	public Cliente(String id, String nome, String usuario, String cpf,  String status ) {
 		super();
 		this.id = id;
 		this.nome = nome;

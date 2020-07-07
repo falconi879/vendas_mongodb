@@ -33,7 +33,20 @@ public class ClienteService {
 		clienteRepository.deleteById(id);
 		
 	}
+	public Cliente update(Cliente obj) {
+		Cliente novoCli = findById(obj.getId());
+		  updateData(novoCli, obj);
+		return clienteRepository.save(novoCli);
+	}
 	
+	
+	
+	private void updateData(Cliente novoCli, Cliente obj) {
+		
+		novoCli.setNome(obj.getNome());
+		novoCli.setUsuario(obj.getUsuario());
+	}
+
 	public Cliente fromDto(ClienteDto clienteDto) {
 		return new Cliente(clienteDto.getId(),clienteDto.getNome(),clienteDto.getUsuario(), null, null);
 		

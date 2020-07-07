@@ -10,6 +10,7 @@ public class ClienteDto implements Serializable {
 	private String id; 
 	private String nome;
 	private String usuario;
+	
 		
 	public ClienteDto() {
 	}

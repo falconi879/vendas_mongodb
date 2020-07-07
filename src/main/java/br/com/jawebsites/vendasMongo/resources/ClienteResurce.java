@@ -48,4 +48,13 @@ public class ClienteResurce {
 		servico.delete(id);
 		return ResponseEntity.noContent().build(); 
 	}
+ 	@RequestMapping(value="/{id}", method=RequestMethod.PUT)
+ 	public ResponseEntity<Void> insert(@RequestBody ClienteDto clienteDto, @PathVariable String id){
+ 		Cliente cliente = servico.fromDto(clienteDto);
+ 		cliente.setId(id);
+ 		cliente = servico.update(cliente);
+ 		return ResponseEntity.noContent().build(); 
+ 		
+ 	}
+ 	
 }
